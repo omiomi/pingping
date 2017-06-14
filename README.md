@@ -1,5 +1,4 @@
-# pingping
-pin
-aaaa
-aa
-gpingaaaaa
+# jiajia
+
+## 工作周报（2017.6.12~2017.6.14）
+- 1. 学习用gulp；
