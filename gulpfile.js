@@ -11,6 +11,23 @@ let gutil = require('gulp-util');
 let git = require('gulp-git');
 let fs = require('fs');
 
+let concat = require('gulp-concat'); // 合并
+let uglify = require('gulp-uglify'); // 压缩
+let rename = require('gulp-rename'); // 重命名
+let jshint = require('gulp-jshint'); // 验证
+
+gulp.task('scripts', function () {
+  gulp.src('src/js/*.js')
+    .pipe(jshint())
+    .pipe(jshint.reporter('default'))
+    .pipe(concat('all.js'))
+    .pipe(gulp.dest( 'dist/js'))
+    .pipe(uglify())
+    .pipe(rename({
+		stuffix: '.min'
+	}))
+    .pipe(gulp.dest('dist/js'));
+});
 
 gulp.task('bump-version', function () {
   return gulp.src(['./bower.json', './package.json'])
