@@ -4,12 +4,12 @@
  **/
 
 //load plugins
-var gulp = require('gulp');
-var runSequence = require('run-sequence');
-var bump = require('gulp-bump');
-var gutil = require('gulp-util');
-var git = require('gulp-git');
-var fs = require('fs');
+let gulp = require('gulp');
+let runSequence = require('run-sequence');
+let bump = require('gulp-bump');
+let gutil = require('gulp-util');
+let git = require('gulp-git');
+let fs = require('fs');
 
 
 gulp.task('bump-version', function () {
@@ -33,7 +33,7 @@ gulp.task('push-changes', function (cb) {
 });
 
 gulp.task('create-new-tag', function (cb) {
-  var version = getPackageJsonVersion();
+  let version = getPackageJsonVersion();
   git.tag(version, 'Created Tag for version: ' + version, function (error) {
     if ( error) {
 	  return cb(error);

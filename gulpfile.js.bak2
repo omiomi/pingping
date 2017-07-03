@@ -20,6 +20,11 @@ gulp.task('bump-version', function () {
 
 gulp.task('commit-changes', function () {
   return gulp.src('.')
+   .pipe(git.add());
+});
+
+gulp.task('commit-changes', function () {
+  return gulp.src('.')
    .pipe(git.commit('[Prerelease] Bumped version number', {args: '-a'}));
 });
 
