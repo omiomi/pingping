@@ -1,6 +1,6 @@
 {
   "name": "pingping",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "aaa",
   "main": "gulpfile.js",
   "scripts": {
@@ -32,6 +32,7 @@
     "gulp-notify": "^3.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^2.1.1",
+    "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "jshint": "^2.9.5",

@@ -16,6 +16,35 @@ let uglify = require('gulp-uglify'); // 压缩
 let rename = require('gulp-rename'); // 重命名
 let jshint = require('gulp-jshint'); // 验证
 
+let sass = require('gulp-sass');  // sass -> css
+let prefixer = require('gulp-autoprefixer');  // 增加前缀
+let minify = require('gulp-minify-css');  // css 压缩
+let notify = require('gulp-notify');  // 打印提醒语句
+
+let imagemin = require('gulp-imagemin');
+let cache = require('gulp-cache');  // 减少重复压缩
+
+//图片压缩
+gulp.task('images', function() { 
+  gulp.src('src/images/*')
+   .pipe(cache(imagemin({
+	  optimizationLevel: 3, progressive: true, interlaced: true })))
+	.pipe(gulp.dest('dist/images/'));
+});
+
+// 编译Sass
+gulp.task('css', function() {
+  gulp.src('src/sass/*.scss')  // 目标 sass 文件
+   .pipe(sass())  // sass -> css
+   .pipe(prefixer('last 2 versions'))  // 参数配置参考 <https://github.com/ai/browserslist>
+   .pipe(minify())  // 压缩
+   .pipe(gulp.dest('dist/css'))  // 目标目录
+   .pipe(notify({
+	   message: 'done'}))
+   .pipe(concat('all.min.css'))  // 
+   .pipe(gulp.dest('dist/css'));  // 目标目录
+});
+
 gulp.task('scripts', function () {
   gulp.src('src/js/*.js')
     .pipe(jshint())
