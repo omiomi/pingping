@@ -24,6 +24,8 @@ let notify = require('gulp-notify');  // 打印提醒语句
 let imagemin = require('gulp-imagemin');
 let cache = require('gulp-cache');  // 减少重复压缩
 
+let babel = require('gulp-babel');
+
 //图片压缩
 gulp.task('images', function() { 
   gulp.src('src/images/*')
@@ -45,6 +47,7 @@ gulp.task('css', function() {
    .pipe(gulp.dest('dist/css'));  // 目标目录
 });
 
+//js es6转换 压缩 重命名
 gulp.task('scripts', function () {
   gulp.src('src/js/*.js')
     .pipe(jshint())
