@@ -9,7 +9,6 @@
   "scripts": {
     "dev": "webpack-dashboard -- node build/dev-server.js --content-base dist/",
     "build": "node build/build.js",
-    "lib": "export LIB_ENV=lib && node build/lib.js",
     "start": "node build/dev-server.js",
     "lint": "eslint src",
     "test": "npm run lint",
@@ -19,18 +18,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ElemeFE/vue-amap.git"
+    "url": ""
   },
   "files": [
     "dist",
     "src"
   ],
-  "author": "elemefe",
+  "author": "wy",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ElemeFE/vue-amap/issues"
+    "url": ""
   },
-  "homepage": "https://github.com/ElemeFE/vue-amap#readme",
+  "homepage": "",
   "devDependencies": {
     "autoprefixer": "^6.4.0",
     "babel-core": "^6.17.0",
@@ -67,7 +66,7 @@
     "express": "^4.13.3",
     "extract-text-webpack-plugin": "^2.0.0",
     "file-loader": "^0.9.0",
-    "friendly-errors-webpack-plugin": "^1.6.1",
+    "friendly-errors-webpack-plugin": "^1.1.3",
     "function-bind": "^1.0.2",
     "html-webpack-plugin": "^2.28.0",
     "http-proxy-middleware": "^0.17.2",
